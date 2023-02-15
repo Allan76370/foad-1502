@@ -19,13 +19,23 @@ $data = json_decode($dummyJson, true);
 // }
 // echo '</div>';
 
-for ($i = 0; $i < count($data['users']); $i++) {
+// for ($i = 0; $i < count($data['users']); $i++) {
+//     echo '<div style="display:flex;flex-wrap:wrap;">';
+//     echo '<div style="display:flex;flex-direction:column;text-align:center;">';
+//     echo '<img src="' . $data['users'][$i]['image'] . '"><br>';
+//     echo  $data['users'][$i]['firstName'] . '<br>';
+//     echo  $data['users'][$i]['maidenName'] . '<br>';
+//     echo  $data['users'][$i]['email'] . '<br>';
+//     echo '</div>';
+//     echo '</div';
+// }
+foreach ($data['users'] as $user) {
     echo '<div style="display:flex;flex-wrap:wrap;">';
     echo '<div style="display:flex;flex-direction:column;text-align:center;">';
-    echo '<img src="' . $data['users'][$i]['image'] . '"><br>';
-    echo  $data['users'][$i]['firstName'] . '<br>';
-    echo  $data['users'][$i]['maidenName'] . '<br>';
-    echo  $data['users'][$i]['email'] . '<br>';
+    echo '<img src="' . $user['image'] . '"><br>';
+    echo $user['firstName'] . '<br>';
+    echo $user['maidenName'] . '<br>';
+    echo $user['email'] . '<br>';
     echo '</div>';
-    echo '</div';
+    echo '</div>';
 }
