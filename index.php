@@ -29,13 +29,15 @@ $data = json_decode($dummyJson, true);
 //     echo '</div>';
 //     echo '</div';
 // }
+echo '<div style="display:flex;flex-wrap:wrap;">';
 foreach ($data['users'] as $user) {
-    echo '<div style="display:flex;flex-wrap:wrap;">';
+    
     echo '<div style="display:flex;flex-direction:column;text-align:center;">';
     echo '<img src="' . $user['image'] . '"><br>';
     echo $user['firstName'] . '<br>';
     echo $user['maidenName'] . '<br>';
     echo $user['email'] . '<br>';
     echo '</div>';
-    echo '</div>';
+    
 }
+echo '</div>';
