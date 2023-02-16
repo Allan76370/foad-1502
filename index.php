@@ -29,15 +29,29 @@ $data = json_decode($dummyJson, true);
 //     echo '</div>';
 //     echo '</div';
 // }
-echo '<div style="display:flex;flex-wrap:wrap;">';
-foreach ($data['users'] as $user) {
-    
-    echo '<div style="display:flex;flex-direction:column;text-align:center;">';
-    echo '<img src="' . $user['image'] . '"><br>';
-    echo $user['firstName'] . '<br>';
-    echo $user['maidenName'] . '<br>';
-    echo $user['email'] . '<br>';
-    echo '</div>';
-    
+
+// echo '<div style="display:flex;flex-wrap:wrap;">';
+// foreach ($data['users'] as $user) {
+
+//     echo '<div style="display:flex;flex-direction:column;text-align:center;">';
+//     echo '<img src="' . $user['image'] . '"><br>';
+//     echo $user['firstName'] . '<br>';
+//     echo $user['maidenName'] . '<br>';
+//     echo $user['email'] . '<br>';
+//     echo '</div>';
+// }
+// echo '</div>';
+
+foreach ($data['users'] as $key => $val) {
+?>
+    <figure>
+        <img src="<?= $val['image'] ?>" alt="">
+        <caption>
+            <p> <? $val['firstName'] ?> <?= $val['lastName'] ?></p>
+            <p><?= $val['email'] ?></p>
+        </caption>
+    </figure>
+
+
+<?php
 }
-echo '</div>';
